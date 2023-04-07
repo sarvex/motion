@@ -1,4 +1,4 @@
-import { isTransitionDefined, isZero } from "../transitions"
+import { isTransitionDefined } from "../transitions"
 
 describe("isTransitionDefined", () => {
     test("Detects a transition", () => {
@@ -10,18 +10,5 @@ describe("isTransitionDefined", () => {
         expect(isTransitionDefined({ delay: 0, duration: 1 })).toBe(true)
         expect(isTransitionDefined({ type: "tween" })).toBe(true)
         expect(isTransitionDefined({ ease: "linear" })).toBe(true)
-    })
-})
-
-describe("isZero", () => {
-    test("correctly detects zero values", () => {
-        expect(isZero(0)).toBe(true)
-        expect(isZero("0px")).toBe(true)
-        expect(isZero("0rem")).toBe(true)
-        expect(isZero("4rem")).toBe(false)
-        expect(isZero(5)).toBe(false)
-        expect(isZero("#000")).toBe(false)
-        expect(isZero("5%")).toBe(false)
-        expect(isZero("0px 0px")).toBe(false)
     })
 })
