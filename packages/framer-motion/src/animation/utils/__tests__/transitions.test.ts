@@ -1,4 +1,4 @@
-import { isTransitionDefined, getZeroUnit, isZero } from "../transitions"
+import { isTransitionDefined, isZero } from "../transitions"
 
 describe("isTransitionDefined", () => {
     test("Detects a transition", () => {
@@ -23,16 +23,5 @@ describe("isZero", () => {
         expect(isZero("#000")).toBe(false)
         expect(isZero("5%")).toBe(false)
         expect(isZero("0px 0px")).toBe(false)
-    })
-})
-
-describe("getZeroUnit", () => {
-    test("correctly converts zeroes to the unit type of provided value", () => {
-        expect(getZeroUnit("5px")).toBe("0px")
-        expect(getZeroUnit("5rem")).toBe("0rem")
-        expect(getZeroUnit("5%")).toBe("0%")
-        expect(getZeroUnit(5)).toBe(0)
-        expect(getZeroUnit("solid")).toBe("solid")
-        expect(getZeroUnit("#fff")).toBe("rgba(255, 255, 255, 1)")
     })
 })
